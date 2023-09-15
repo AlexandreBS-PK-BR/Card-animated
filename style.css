@@ -1,0 +1,519 @@
+:root {
+    --primary: #2175f5;
+}
+
+/* TIRANDO E COLOCANDO ATRIBUTOS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* COR DO FUNDO */
+body {
+    background-color: #efefef;
+}
+
+/* COLOCANDO TEXTO E ICONES NO CENTRO DA PAG */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow: hidden;
+}
+
+/* COLOCANDO "NIKE" NA LATERAL DO TEXTO NO CENTRO */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 860px;
+}
+
+/* CONTRUINDO QUADRADO */
+.shoeBackground {
+    position: relative;
+    width: 50%;
+    height: 475px;
+    box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1),
+                0 -15px 35px rgba(0, 0, 0, 0.1),
+                0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+
+/* QUADRADO */
+.gradients {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+
+/* ANIMAÇAO */
+.first {
+    z-index: 0;
+    animation: 1s width ease;
+}
+
+@keyframes width {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+.second {
+    z-index: -1;
+}
+
+/* CORES DO QUADRADO */
+.gradient[color="blue"] {
+    background-image: linear-gradient(45deg, #0136af, #22abfa);
+}
+
+.gradient[color="red"] {
+    background-image: linear-gradient(45deg, #d62926, #ee625f);
+}
+
+.gradient[color="green"] {
+    background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+
+.gradient[color="orange"] {
+    background-image: linear-gradient(45deg, #fc4a1a, #f7b733);
+}
+
+.gradient[color="black"] {
+    background-image: linear-gradient(45deg, #111, #666);
+}
+
+/* POSIÇAO DO "LOGO" NO CANTO SUPERIOR ESQUERDO */
+.logo {
+    position: absolute;
+    width: 100px;
+    left: 20px;
+    top: 20px;
+}
+
+/* CIRCULO NO CANTO SUPERIOR DIREITO, COR BRANCA */
+.share {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #FFF;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    /* TAMANHO DO BOTAO */
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--primary);
+    /* ANIMAÇAO */
+    transition: .5s;
+}
+
+/* ANIMAÇAO */
+.share:hover {
+    transform: scale(1.1);
+}
+
+/* POSIÇAO DO BOTAO "COMPARTILHAR" */
+.share i {
+    line-height: 50px;
+}
+
+/* POSICAO DO NOME "NIKE" NO CENTRO DA PAG */
+.nike {
+    position: absolute;
+    top: 85px;
+    left: 15px;
+    font-size: 11rem;
+    text-transform: uppercase;
+    line-height: .9;
+    color: #fff;
+    opacity: .1;
+}
+
+/* POSIÇAO DO TENES */
+.shoe {
+    position: absolute;
+    width: 140%;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    transform: rotate(-20deg);
+    transition: .5s;
+}
+
+/* TENES APARECER */
+.shoe.show {
+    opacity: 1;
+}
+
+/* SOMBRA DO FUNDO DO QUADRADO BRANCO */
+.info {
+    width: 50%;
+    background-color: #fff;
+    z-index: 1;
+    padding: 35px 40px;
+    box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1),
+                0 -15px 35px rgba(0, 0, 0, 0.1),
+                0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* TAMANHO DO QUADRADO BRANCO */
+.shoeName {
+    padding: 0 0 10px 0;
+}
+
+/* POSIÇAO DO TEXTO 'new' */
+.shoeName div {
+    display: flex;
+    align-items: center;
+}
+
+/* COR DO TITULO E ESPAÇAMENTO */
+.shoeName div .big {
+    margin-right: 10px;
+    font-size: 2rem;
+    color: #333;
+    line-height: 1;
+}
+
+/* CONSTRUINDO QUADRADO E COR, COR TEXTO */
+.shoeName div .new {
+    background-color: var(--primary);
+    text-transform: uppercase;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+/* COR E TAMANHO DO SUBTEXTO */
+.shoeName .small {
+    font-weight: 500;
+    color: #444;
+    margin-top: 3px;
+    text-transform: capitalize;
+}
+
+/* LINHA HORIZONTAL ENTRE OS TEXTO */
+.shoeName, .description, .color-container, .size-container {
+    border-bottom: 1px solid #dadada;
+}
+
+/* POSIÇAO DO TEXTO 'info' */
+.description {
+    padding: 10px 0;
+}
+
+/* COR TAMANHO 'info,color,size' */
+.title {
+    color: #3a3a3a;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/* COR DO TEXTO E TAMANHO 'info' */
+.text {
+    color: #555;
+    font-size: 17px;
+}
+
+/* ESPAÇO */
+.color-container {
+    padding: 10px 0;
+}
+
+/* COLOCANDO ESPAÇO E ALIAMENTO NOS ITENS 'color' */
+.colors {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* POSICIONAMENTO DAS CORES E TAMANHO 'color' */
+.color {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 5px solid;
+    /* ANIMAÇAO */
+    cursor: pointer;
+    transition: .5s;
+}
+
+/* TABELA DE CORES 'color' */
+.color[color="blue"] {
+    background-color: #2175f5;
+    border-color: #2175f5;
+}
+
+.color[color="red"] {
+    background-color: #f84848;
+    border-color: #f84848;
+}
+
+.color[color="green"] {
+    background-color: #29b864;
+    border-color: #29b864;
+}
+
+.color[color="orange"] {
+    background-color: #ff5521;
+    border-color: #ff5521;
+}
+
+.color[color="black"] {
+    background-color: #444;
+    border-color: #444;
+}
+
+/* BORDA BRANCA QUE SELECIONA A COR */
+.color.active {
+    border-color: #fff;
+    box-shadow: 0 0 10px .5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+/* ESPAÇAMENTO */
+.size-container {
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+/* ESPACAMENTO 'size' */
+.sizes {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* FAZENDO QUADRADO EM VOLTA DOS NUMERO E SUA COR 'size' */
+.size {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #eee;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    /* ANIMAÇAO */
+    transition: .3s;
+}
+
+/* COR DO QUADRADO SELECIONADO 'size' */
+.size.active {
+    background-color: var(--primary);
+    color: #fff;
+    transition: .5s;
+}
+
+/* POSICIONAMENTO DOS ITENS DO VALOR E CARINHO */
+.buy-price {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* POSIÇAO DO '$' */
+.price {
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* POSIÇAO DO 'valor' */
+.price h1 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* TAMANHO DO '$' */
+.price i {
+    font-size: 1.4rem;
+    margin-right: 1px;
+}
+
+/* QUADRADO DO CARRINHO DE COMPRA E SUA COR E COR DO TEXTO E TAMANHO */
+.buy {
+    padding: .7rem 1rem;
+    background-color: var(--primary);
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    /* ANIMAÇAO */
+    transition: .5s;
+}
+
+/* ANIMAÇAO */
+.buy:hover {
+    transform: scale(1.1);
+}
+
+.buy i {
+    margin-right: 2px;
+}
+
+/* TAMANHO DA PAG EM QUALQUER DISPOSITIVO */
+@media (max-width: 1070px) {
+    .shoe {
+        width: 135%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .card {
+        flex-direction: column;
+        width: 100%;
+        box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card > div {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .shoe {
+        width: 100%;
+        transform: rotate(-5deg) translateY(-50%);
+        top: 55%;
+        right: 2%;
+    }
+
+    .nike {
+        top: 20%;
+        left: 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .share {
+        width: 40px;
+        height: 40px;
+    }
+
+    .share i {
+        font-size: 1rem;
+        line-height: 40px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+}
+
+@media (max-width: 490px) {
+    .nike {
+        font-size: 7rem;
+    }
+
+    .shoeName div .big {
+        font-size: 1.3rem;
+    }
+
+    .small {
+        font-size: 1rem;
+    }
+
+    .new {
+        padding: 2px 6px;
+        font-size: .9rem;
+    }
+
+    .title {
+        font-size: .9rem;
+    }
+
+    .text {
+        font-size: .8rem;
+    }
+
+    .buy {
+        padding: .5rem .8rem;
+        font-size: .8rem;
+    }
+
+    .price h1 {
+        font-size: 1.5rem;
+    }
+
+    .price i {
+        font-size: .9rem;
+    }
+
+    .size {
+        width: 30px;
+        height: 30px;
+        margin: 0 8px;
+        font-size: .9rem;
+        line-height: 30px;
+    }
+
+    .color {
+        margin: 0 6px;
+        width: 0 20px;
+        width: 20px;
+        height: 20px;
+        border-width: 4px;
+    }
+
+    .share {
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .share i {
+        font-size: .8rem;
+        line-height: 35px;
+    }
+
+    .logo {
+        width: 60px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .info {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .buy i {
+        display: none;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
